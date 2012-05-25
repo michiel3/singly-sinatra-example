@@ -1,14 +1,14 @@
 # Sinatra Singly example
 
-Example app using the Singly API with Sinatra.
+
+Example app using the Singly API with Sinatra (Ruby).
 
 ## Usage
-
-  gem install shotgun
+	gem install shotgun
+	  
+	export SINGLY_ID=<your Singly app ID>
+	export SINGLY_SECRET=<your Singly app secret>
+	
+	shotgun -p 4567 lib/application.rb
   
-  export SINGLY_ID=<your Singly app ID>
-  export SINGLY_SECRET=<your Singly app secret>
-  
-  shotgun -p 4567 lib/application.rb
-  
-Now visit http://lvh.me:4567.
+Now visit <http://lvh.me:4567>.
