@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Singly Sinatra Example</title>
+  <link href="assets/css/bootstrap.css" rel="stylesheet" />
+  <style>
+    body {
+      padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a href="#" class="brand">My Photos</a>
+        <ul class="nav pull-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Account
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <% if @profiles && @profiles['facebook'] %>
+                <li>
+                  <a href="/logout">
+                    <i class="icon-off"></i>
+                    Logout
+                  </a>
+                </li>
+              <% else %>
+                <li>
+                  <a href="/auth/singly?service=facebook">
+                    <i class="icon-share"></i>
+                    Login with Facebook
+                  </a>
+                  </li>
+              <% end %>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <%= yield %>
+  </div>
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/bootstrap-dropdown.js"></script>
+</body>
+</html>

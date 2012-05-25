@@ -1,0 +1,9 @@
+<ul class="thumbnails row">
+  <% @photos.each do |photo| %>
+    <li class="span1">
+      <div class="thumbnail">
+        <a href="<%= photo['data']['source'] %>"><img src="<%= photo['data']['picture'] %></a>" /></a>
+      </div>
+    </li>
+  <% end %>
+</ul>
