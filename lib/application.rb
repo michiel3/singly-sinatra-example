@@ -2,7 +2,7 @@ require "sinatra"
 require 'omniauth-singly'
 require "httparty"
 
-SINGLY_API_BASE = "https://api.singly.com"
+SINGLY_API_BASE = "http://localhost:8042"
 
 enable :sessions
 set :public_folder, 'public'
@@ -25,10 +25,6 @@ get "/" do
                 :query => { :access_token => session[:access_token] }
               }).parsed_response
               
-      
-            
-    puts @photos
-    
     erb :connected
   else
     erb :not_connected
@@ -37,7 +33,6 @@ end
 
 get "/auth/singly/callback" do
   auth = request.env['omniauth.auth']
-  puts auth
   session[:access_token] = auth.credentials.token
   redirect "/"
 end
