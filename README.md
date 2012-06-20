@@ -4,6 +4,9 @@
 Example app using the Singly API with Sinatra (Ruby).
 
 ## Usage
+
+	bundle install
+	
 	gem install shotgun
 	  
 	export SINGLY_ID=<your Singly app ID>
